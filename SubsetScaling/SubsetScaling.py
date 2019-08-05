@@ -190,7 +190,6 @@ fonts = ["C:/PROGRAM FILES/DELL/SUPPORTASSISTAGENT/BIN/APP/CONTENT/CSS/THEME/FON
 def size(path, fontNumber, glyphs):
     options = fontTools.subset.Options()
     subsetter = fontTools.subset.Subsetter(options=options)
-    options.passthrough_tables = True
     subsetter.populate(glyphs=glyphs, gids=[], unicodes=[], text="")
     font = fontTools.ttLib.TTFont(path, fontNumber=fontNumber)
     subsetter.subset(font)
